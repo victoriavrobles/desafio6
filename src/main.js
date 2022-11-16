@@ -14,11 +14,12 @@ const publicRoot = './public';
 aplicacion.use(express.json());
 aplicacion.use(express.urlencoded({ extended: true }));
 
+
 aplicacion.use(express.static(publicRoot));
 
 const Contenedor = require("./contenedor")
-const productos = new Contenedor('./productos.txt');
-const mensajes = new Contenedor('./mensajes.txt');
+const productos = new Contenedor('./src/productos.txt');
+const mensajes = new Contenedor('./src/mensajes.txt');
 
 aplicacion.get('/', (peticion, respuesta) => {
   respuesta.send('index.html', { root: publicRoot });
@@ -27,18 +28,18 @@ aplicacion.get('/', (peticion, respuesta) => {
 
 // Sockets
 io.on('connection', async (socket) => {
-  console.log('Nuevo cliente conectado!');
+  console.log('Nuevo usuario conectado!');
 
   const listaProductos = await productos.getAll();
   socket.emit('nueva-conexion', listaProductos);
 
   socket.on("new-product", (data) => {
-    productos.save(data);
+    mensajes.save(data);
     io.sockets.emit('producto', data);
   });
 
   const listaMensajes = await mensajes.getAll();
-  socket.emit('messages', listaMensajes);
+  io.sockets.emit('send-message-update', listaMensajes);
 
   socket.on('new-message', async data => {
     data.time = moment(new Date()).format('DD/MM/YYYY hh:mm:ss');

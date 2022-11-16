@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "title": "Violeta - Isabel Allende",
+        "price": "4500",
+        "thumbnail": "https://contentv2.tap-commerce.com/cover/large/9789500766647_1.jpg?id_com=1113"
+    },
+    {
+        "id": 2,
+        "title": "Personas decentes - Leonardo Padura",
+        "price": "4200",
+        "thumbnail": "https://contentv2.tap-commerce.com/cover/large/9789876707213_1.jpg?id_com=1113"
+    },
+    {
+        "id": 3,
+        "title": "El diseño del mundo - Franco Pellegrini",
+        "price": "3100",
+        "thumbnail": "https://firebasestorage.googleapis.com/v0/b/ecommerce-2438a.appspot.com/o/el_diseno_del_mundo1-1e9e623d5d13a1774616560895240424-640-0.jpg?alt=media&token=335fb631-4cc6-4278-b19d-d745ef330d4e"
+    },
+    {
+        "id": 4,
+        "title": "El testigo lúcido - María Negroni",
+        "price": "2500",
+        "thumbnail": "https://contentv2.tap-commerce.com/cover/large/9789871768400_1.jpg?id_com=1113"
+    },
+    {
+        "id": 5,
+        "title": "Google Drive",
+        "price": "46765",
+        "thumbnail": "https://cdn3.iconfinder.com/data/icons/logos-brands-3/24/logo_brand_brands_logos_google_drive-512.png"
+    }
+]

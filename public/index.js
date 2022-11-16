@@ -17,7 +17,7 @@ function renderProducto(producto) {
   const foto = document.createElement('td');
   const img = document.createElement('img');
   img.setAttribute("src", producto.thumbnail);
-  img.setAttribute("width", "25");
+  img.setAttribute("width", "50");
 
   foto.appendChild(img);
   linea.appendChild(foto);
