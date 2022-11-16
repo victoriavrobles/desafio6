@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="index.js"></script>
+  <title> Inicio</title>
+</head>
+<body>
+  <div>
+<h1 class="my-3">Ingrese producto: </h1>
+<form onsubmit="return addProduct(this)">
+  <div class="input-group mb-3 flex-nowrap">
+    <span class="input-group-text" id="inputGroup-sizing-default">Titulo</span>
+    <input type="text" id="title" name="title" class="form-control" aria-label="Titulo" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Precio</span>
+    <input type="text" id="price" name="price" class="form-control" aria-label="precio" aria-describedby="inputGroup-sizing-default">
+  </div>
+
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="inputGroup-sizing-default">Foto URL:</span>
+    <input type="text" id="thumbnail" name="thumbnail" class="form-control" aria-label="thumbnail" aria-describedby="inputGroup-sizing-default">
+  </div>
+  <input type="submit" value="Enviar">
+</form>
+<br>
+    <br>
+
+    <h2 class="my-3">Vista de Productos</h2>
+   <table class="table table-success table-striped-columns" id="productos">
+    <thead>
+    <tr>
+      <th scope="col">Titulo</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Foto</th>
+    </tr>
+  </thead>
+  </table>
+
+      <br>
+      <h2>Centro de Mensajes</h2>
+      <form onsubmit="return addMessage(this)">
+        <input type="email" id="email" placeholder="Tu Email" >
+        <input type="text" id="texto" placeholder="Cuéntanos algo...">
+        <input type="submit" value="Enviar">
+      </form>
+      <div id="messages"></div>
+  </div>
+</body>
+</html>
